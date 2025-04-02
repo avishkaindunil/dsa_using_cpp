@@ -46,6 +46,15 @@ public:
     bool isEmpty() {
         return (top < 0);
     }
+
+    // Optional: Function to print all elements of the stack
+    void printStack() {
+        cout << "Stack elements: ";
+        for (int i = 0; i <= top; ++i) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
 };
 
 int main() {
@@ -59,6 +68,8 @@ int main() {
     cout << "Top element is: " << stack.peek() << endl; // Should print 20
 
     cout << "Stack empty: " << (stack.isEmpty() ? "Yes" : "No") << endl; // Should print No
+
+    stack.printStack(); // Optional: Print all elements in the stack
 
     return 0;
 }
