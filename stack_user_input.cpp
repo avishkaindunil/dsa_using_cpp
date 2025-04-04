@@ -4,36 +4,33 @@ using namespace std;
 
 class Stack {
 private:
-    static const int MAX = 100; // Maximum size of the stack
-    int arr[MAX]; // Array to store stack elements
-    int top; // Index of the top element
+    static const int MAX = 100; 
+    int arr[MAX]; 
+    int top; 
 
 public:
-    Stack() : top(-1) {} // Constructor initializes top to -1 indicating an empty stack
+    Stack() : top(-1) {} 
 
-    // Function to add an element to the stack
     void push(int x) {
         if (top >= MAX - 1) {
             cout << "Stack overflow" << endl;
         } else {
-            arr[++top] = x; // Increment top and add element
+            arr[++top] = x;
             cout << x << " pushed into stack" << endl;
         }
     }
 
-    // Function to remove the top element from the stack
     int pop() {
         if (top < 0) {
             cout << "Stack underflow" << endl;
             return 0;
         } else {
-            int x = arr[top--]; // Remove the top element and decrement top
+            int x = arr[top--]; 
             cout << x << " popped from stack" << endl;
             return x;
         }
     }
 
-    // Function to return the top element of the stack
     int peek() {
         if (top < 0) {
             cout << "Stack is empty" << endl;
@@ -43,12 +40,10 @@ public:
         }
     }
 
-    // Function to check if the stack is empty
     bool isEmpty() {
         return (top < 0);
     }
 
-    // Function to print all elements of the stack
     void printStack() {
         if (isEmpty()) {
             cout << "Stack is empty" << endl;
