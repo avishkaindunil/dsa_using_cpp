@@ -1,6 +1,6 @@
 #include <iostream>
 
-// extern int s_Variable;
+extern int s_Variable;
 
 void Function() {
 
