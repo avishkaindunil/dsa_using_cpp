@@ -8,7 +8,6 @@ private:
     int* array;
 
 public:
-    // Constructor to initialize the queue
     Queue(int cap) {
         capacity = cap;
         front = 0;
@@ -17,46 +16,40 @@ public:
         array = new int[capacity];
     }
 
-    // Destructor to free memory
     ~Queue() {
         delete[] array;
     }
 
-    // Check if the queue is full
     bool isFull() {
         return size == capacity;
     }
 
-    // Check if the queue is empty
     bool isEmpty() {
         return size == 0;
     }
 
-    // Add an element to the queue
     void enqueue(int item) {
         if (isFull()) {
             cout << "Queue is full, cannot enqueue " << item << endl;
             return;
         }
-        rear = (rear + 1) % capacity; // Circular increment
+        rear = (rear + 1) % capacity;
         array[rear] = item;
         size++;
         cout << "Enqueued: " << item << endl;
     }
 
-    // Remove an element from the queue
     int dequeue() {
         if (isEmpty()) {
             cout << "Queue is empty, cannot dequeue" << endl;
             return -1;
         }
         int item = array[front];
-        front = (front + 1) % capacity; // Circular increment
+        front = (front + 1) % capacity; 
         size--;
         return item;
     }
 
-    // Get the front element of the queue
     int peek() {
         if (isEmpty()) {
             cout << "Queue is empty, nothing to peek" << endl;
@@ -65,7 +58,6 @@ public:
         return array[front];
     }
 
-    // Display the queue elements
     void display() {
         if (isEmpty()) {
             cout << "Queue is empty" << endl;
@@ -73,7 +65,7 @@ public:
         }
         cout << "Queue elements: ";
         for (int i = 0; i < size; i++) {
-            int index = (front + i) % capacity; // Circular indexing
+            int index = (front + i) % capacity; 
             cout << array[index] << " ";
         }
         cout << endl;
@@ -81,7 +73,7 @@ public:
 };
 
 int main() {
-    Queue q(5); // Create a queue with a capacity of 5
+    Queue q(5); 
 
     q.enqueue(10);
     q.enqueue(20);
